@@ -7,9 +7,9 @@ local PlaceId = game.PlaceId
 local Games = {
     [11455876520] = "https://raw.githubusercontent.com/GodYT88/Allusion/refs/heads/main/Games/Trade-Strength-Simulator",
 }
-
-if table.find(Games,PlaceId) then
-    loadstring(Games[PlaceId])()
+local FoundGame = Games[PlaceId] or false
+if FoundGame then
+    loadstring(game:HttpGet(FoundGame))()
 else
     Player:Kick("Allusion : game not support")
 end
