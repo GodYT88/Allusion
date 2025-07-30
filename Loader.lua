@@ -11,5 +11,5 @@ local FoundGame = Games[PlaceId] or false
 if FoundGame then
     loadstring(game:HttpGet(FoundGame))()
 else
-    Player:Kick("Allusion : game not support")
+    Player:Kick("Allusion : Game Not Support")
 end
