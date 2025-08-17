@@ -9,7 +9,7 @@ local Games = {
     [11455876520] = "https://api.luarmor.net/files/v3/loaders/97bcf334758e81ee33dc522cf41ccadd.lua",
 }
 local FoundGame = Games[PlaceId] or false
-local FoundGame2 = Allusion_DarkLoader ~= "" and loadstring(game:HttpGet(Allusion_DarkLoader))()
+local FoundGame2 = Allusion_DarkLoader ~= "" and (function() local success,ret = loadstring(game:HttpGet(Allusion_DarkLoader))(); if success then return ret end end)()
 if FoundGame then
     loadstring(game:HttpGet(FoundGame))()
 elseif FoundGame2 then
